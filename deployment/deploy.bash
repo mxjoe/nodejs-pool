@@ -26,8 +26,8 @@ sudo systemctl enable ntp
 cd /usr/local/src
 sudo git clone https://github.com/monero-project/monero.git
 cd monero
-sudo git checkout v0.12.0.0
-curl https://raw.githubusercontent.com/Snipa22/nodejs-pool/master/deployment/monero_daemon.patch | sudo git apply -v
+sudo git checkout release-v0.12
+curl https://raw.githubusercontent.com/mxjoe/nodejs-pool/master/deployment/monero_daemon.patch | sudo git apply -v
 sudo make -j$(nproc)
 sudo cp ~/nodejs-pool/deployment/monero.service /lib/systemd/system/
 sudo useradd -m monerodaemon -d /home/monerodaemon
